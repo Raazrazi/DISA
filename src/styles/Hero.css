@@ -1,4 +1,5 @@
 .hero {
+    /* Your original background is kept completely unchanged */
     background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     min-height: 100vh;
     display: flex;
@@ -6,6 +7,102 @@
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 30px;
+    
+    position: relative; /* Needed to layer the 3D items inside */
+    overflow: hidden;
+}
 
+.hero-canvas-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    max-width: 950px;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 15px 0;
+}
+
+.hero-highlight {
+    color: #ebb135; /* DISA Gold */
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 580px;
+    margin: 0 auto 40px auto;
+}
+
+/* Four Pillars Layout Architecture Grid */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    pointer-events: auto;
+}
+
+.pillar-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.pillar-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.pillar-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    line-height: 1.4;
+}
+
+.pillar-card:hover, .pillar-card.focused {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #ebb135;
+    transform: translateY(-5px);
+}
+
+.pillar-card:hover h3 {
+    color: #ebb135;
+}
+
+.hero-btn {
+    pointer-events: auto;
+    padding: 14px 40px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    background-color: #ebb135;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hero-btn:hover {
+    background-color: #d99f26;
+    transform: scale(1.03);
 }

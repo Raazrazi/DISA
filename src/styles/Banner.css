@@ -1,0 +1,114 @@
+/* Core Cinematic Container Frame */
+.banner {
+    background-color: #111111;
+    background-position: center center;
+    background-size: cover;
+    height: 550px;
+    color: white;
+    position: relative; /* Crucial for absolute overlay stacking context */
+    display: flex;
+    align-items: center;
+    padding-left: 4%; /* Classic Netflix text alignment padding offsets */
+}
+
+/* Netflix Fade-to-Black Lower Vignette Gradient Overlays */
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    /* Smoothly blends your background image into the page background color below it */
+    background: linear-gradient(to top, #111111 0%, rgba(17, 17, 17, 0.6) 40%, transparent 100%);
+    z-index: 1;
+}
+
+/* Foreground Info Block Layer Container */
+.content {
+    position: relative;
+    z-index: 2; /* Forces contents over background overlay graphics */
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45); /* Ensures text pop off images */
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
+    max-width: 480px;
+}
+
+/* Button Group Flex Alignment Box */
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Upgraded Interactive Netflix Button Style Modules */
+.goto {
+    /* 1. Transparent background color letting light pass through */
+    background: rgba(255, 255, 255, 0.08);
+    
+    /* 2. Frosted glass hardware-accelerated blur filter */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Vital for Safari iOS support */
+    
+    /* 3. Thin translucent glowing inner edge border outline */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    color: #ffffff;
+    outline: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    padding: 0.6rem 2.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Smooth transition interpolations */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 4. Elegant Bright Hover state shift */
+.goto:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* 5. Clean Active Click compression response */
+.goto:active {
+    transform: translateY(1px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Optional: Branded accent variation if you want a gold-tinted glass button */
+.goto.btn-gold-glass {
+    background: rgba(235, 177, 53, 0.08);
+    border: 1px solid rgba(235, 177, 53, 0.25);
+    color: #ebb135;
+}
+
+.goto.btn-gold-glass:hover {
+    background: rgba(235, 177, 53, 0.18);
+    border-color: rgba(235, 177, 53, 0.45);
+}
