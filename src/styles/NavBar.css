@@ -1,0 +1,78 @@
+:root {
+    --main-col:white;
+    
+}
+
+
+
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1400px;
+    height: 60px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    overflow: hidden;
+
+
+
+}
+.navigation.scrolled{
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    border-radius: 0;
+    background: rgba(15, 12, 41, 0.9);
+}
+
+.logo {
+    font-weight: 700;
+    font-size:30px ;
+    margin-left: 40px;
+    color: var(--main-col);
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap:30px;
+    
+    
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--main-col);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    padding: 5px 10px;
+    padding-left: 10px;
+    border-radius:6px;
+    margin-right: 20px;
+}
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
