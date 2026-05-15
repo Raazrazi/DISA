@@ -11,6 +11,7 @@ const Banner = () => {
                 </div>
                 <h1 className="description">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</h1>
             </div>
+            <div className="fade"></div>
 
         </div>
     )

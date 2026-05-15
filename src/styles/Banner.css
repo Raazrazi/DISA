@@ -1,9 +1,9 @@
 /* Core Cinematic Container Frame */
 .banner {
-    background-color: #111111;
+    background-image:url('/ChatGPT Image May 6, 2026, 05_56_36 PM.png');
     background-position: center center;
     background-size: cover;
-    height: 550px;
+    height: 448px;
     color: white;
     position: relative; /* Crucial for absolute overlay stacking context */
     display: flex;
@@ -111,4 +111,12 @@
 .goto.btn-gold-glass:hover {
     background: rgba(235, 177, 53, 0.18);
     border-color: rgba(235, 177, 53, 0.45);
+}
+
+.fade {
+    height: 7.5rem;
+    background-image: linear-gradient(180deg,Transparent,rgba(37,37,37,0.61),#111);
+
+    
+
 }
